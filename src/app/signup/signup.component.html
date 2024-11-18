@@ -1,0 +1,46 @@
+<div class="container w-75 my-5">
+    <a  style="text-decoration: none; color: rgb(24, 24, 23);" href="">Back To Home</a>
+
+    <div class="row shadow rounded-2">
+        <div class="col-lg-6">
+            <img class="w-75" src="https://i.postimg.cc/y6vLqyvG/signup.png" alt="">
+
+        </div>
+        <div class="col-lg-6 p-3 bg-light">
+            <h4>Create New Account</h4>
+            <form [formGroup]="signupModel" action="" class="">
+                <div class="form-floating my-3">
+                    <input formControlName="username" class="form-control" placeholder="UserName here" id="floatingTextarea ">
+                    <label for="floatingTextarea">UserName</label>
+                </div>
+                <div *ngIf="signupModel.get('username')?.errors&&signupModel.get('username')?.touched">
+                    <p class="text-danger">Invalid username !</p>
+
+                </div>
+                <div class="form-floating my-3">
+                    <input formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email Address</label>
+                </div>
+                <div *ngIf="signupModel.get('email')?.errors&&signupModel.get('email')?.touched">
+                    <p class="text-danger">Invalid email ! </p>
+
+                </div>
+                        <div class="form-floating my-3">
+                            <input formControlName="password" class="form-control" type="password" placeholder="Place  here" id="floatingTextarea">
+                            <label for="floatingTextarea">Password</label>
+                        </div>
+                        <div *ngIf="signupModel.get('password')?.errors&&signupModel.get('password')?.touched">
+                            <p class="text-danger">Invalid password !</p>
+        
+                        </div>
+                            
+                        <div class="d-flex justify-content-between my-4">
+                        <button (click)="signUp()" class="btn btn-secondary ">SignUp</button>
+        
+                    </div>
+                    <p>Already Have An Account ? <a  style="text-decoration: none;" href="">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+</div>

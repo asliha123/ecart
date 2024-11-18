@@ -1,0 +1,29 @@
+<app-header></app-header>
+
+
+<div class="container  w-100 p-5 my-5 ">
+    <div class="card mb-3 shadow" style="max-width: 75%;">
+        <div class="row g-0">
+            <div class="col-md-6">
+                <img [src]="product.image" class="img-fluid rounded-start p-3" alt="...">
+            </div>
+            <div class="col-md-6">
+                <div class="card-body p-5 mt-2">
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <h6 class="my-4 text-success">{{product.price}} Rs</h6>
+                    <p> Category: {{product.category}}</p>
+                    <p class="card-text">{{product.description}}</p>
+                    <p>Rating :<span [ngClass]="product.rating.rate>=4?'c1':'c2'">{{product.rating.rate}} <i class="fa-solid fa-star"></i> </span> ({{product.rating.count}})</p>
+                    <div class="d-flex justify-content-between my-4 pt-5">
+                        <button class="btn btn-light border px-2"> 
+                         <h6>Add to <i class="fa-solid fa-cart-plus fs-4 text-dark"></i></h6> 
+                        </button>
+                        <button class="btn btn-light border px-4">
+                           Add to <i class="fa-regular fa-heart fs-4" style="color: #c49227;"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

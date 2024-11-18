@@ -1,0 +1,57 @@
+<app-header></app-header>
+<div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://i.postimg.cc/FzQpDP0Q/2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.postimg.cc/wBLs0927/Gray-Minimalist-New-Collection-Banner.jpg" class="d-block w-100"
+        alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.postimg.cc/x1qvyrBz/1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://i.postimg.cc/4N07GYFY/3.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<hr class="container ">
+
+<div class="bg-light">
+    <div class="container-fluid">
+        <div class="row mt-5">
+          <div *ngFor="let i of allProducts" class="card col-lg-3 m-4" style="width: 18rem;">
+
+          <a routerLink="view/{{i._id}}">
+              <img [src]="i.image" style="height: 300px;" class="  card-img-top " alt="...">
+          </a>
+                <div class="card-body">
+                  <h4 class="card-title text-center mt-3">{{i.title.length>20?i.title.slice(0,20)+"...":i.title}}</h4>
+                  <p class="card-text text-center ">{{i.category}}</p>
+                  <h5 class="text-center">{{i.price}}</h5>
+                  <!-- <a href="" class="btn btn-primary">Go somewhere</a>  -->
+                 <div class="d-flex justify-content-between my-4">
+                    <button (click)="addToCart()" class="btn btn-light border px-3">
+                      <i class="fa-solid  fa-cart-plus"></i>
+                    </button>
+                      <button   (click)="addToWishlist(i.id,i.title,i.description,i.price,i.category,i.image,i.rating)" class="btn btn-light border px-3">
+                        <i class="fa-regular   fa-heart" style="color: #c49227;"></i>
+                      </button>
+                   </div>
+                </div>
+              </div> 
+
+        </div> 
+
+</div>
+
+
